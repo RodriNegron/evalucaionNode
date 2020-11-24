@@ -33,6 +33,6 @@ const consecionaria = {
 }
 
 //consecionaria.venderAuto("JJK116")
-console.log(autos);
+//console.log(autos);
 //console.log(consecionaria.autosParaLaVenta())
 //console.log(consecionaria.autos0KM())
