@@ -1,0 +1,10 @@
+se necesita conocer la siguiente informacion:
+Marca (Ford, Fiat, etc). (marca)
+Modelo (Fiesta, Corolla, etc). (modelo)
+Color (Azul, Rojo, etc). (color)
+Año de fabricación. (año)
+Cantidad de kilómetros recorridos. (km)
+Precio final. (precio)
+Cantidad de cuotas. (cuotas)
+Patente. (patente)
+Vendido: para indicar si el auto está o no vendido. (vendido)   // estado
