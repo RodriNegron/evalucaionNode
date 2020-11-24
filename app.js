@@ -26,15 +26,17 @@ const consecionaria = {
         resultado=resultado.filter(auto => auto.km <=100);
         return resultado;
     },
-    //devuelve una lista que contiene el precio de venta de cada auto vendido
+    
     listaDeVentas: function(){
         let autoVendido = autos.filter(autos => autos.vendido==true)
-        autoVendido.forEach(auto => console.log(auto.precio))
+        autoVendido.forEach(function(auto,index){
+            autoVendido[index]=auto.precio
+        })
+        return autoVendido;
     }
 }
 
 consecionaria.venderAuto("JJK116")
-//console.log(autos);
-//console.log(consecionaria.autosParaLaVenta())
-//console.log(consecionaria.autos0KM())
-consecionaria.listaDeVentas();
+consecionaria.venderAuto("APL123")
+
+console.log(consecionaria.listaDeVentas());
