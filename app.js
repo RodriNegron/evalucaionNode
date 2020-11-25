@@ -1,3 +1,4 @@
+const { filter } = require("./autos");
 let autos = require("./autos");
 let persona = require("./persona");
 
@@ -41,22 +42,22 @@ const consecionaria = {
     },
     puedeComprar: function(auto, persona){
          return (((auto.precio <= persona.capacidadDePagoTotal) && ((auto.precio/auto.cuotas)<=persona.capacidadDePagoEnCuotas)) ? true : false)
+    },
+    autosQuePuedeComprar: function(persona){
+        let resultado = autos.filter(autos => this.puedeComprar(autos,persona)==true)
+        return resultado;
     }
 
 }
 
 /*
-verificar si una persona puede comprar o no un auto. Esta permite al sistema definir si una persona al consultar por un auto, puede comprarlo. 
-Las personas solo sacan los autos en cuotas y tomando dos factores como condición de compra. 
-Una es el costo total: si el total de un auto excede lo que la persona considera caro, no va a comprar el auto. 
-Otra condición es su capacidad de pago en cuotas: si la capacidad de pago en cuotas supera al costo de la cuota, va a poder pagarlo. 
-Si ambas condiciones se cumplen, se realiza la compra.
-
-Es por esto que María te pide que desarrolles la función puedeComprar que reciba por parámetro un auto y una persona y devuelva true si la misma puede comprar el auto.
-*/
+ let listaPuedeComprar = this.autosParaLaVenta();
+        return this.puedeComprar(listaPuedeComprar, persona) ? console.log(listaPuedeComprar.auto): false;*/
 
 consecionaria.venderAuto("JJK116")
 consecionaria.venderAuto("APL123")
 
 //console.log(consecionaria.listaDeVentas());
-console.log(consecionaria.totalDeVentas())
+//console.log(consecionaria.totalDeVentas())
+//console.log(persona)
+console.log(consecionaria.autosQuePuedeComprar(persona))
